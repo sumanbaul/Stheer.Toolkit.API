@@ -73,7 +73,7 @@ namespace Stheer.Api.Provider.Controllers
             {
                 if(code == item.Code)
                 {
-                    item.Name = habit.Name;
+                    item.HabitName = habit.HabitName;
                     result = item;
                 }
             }

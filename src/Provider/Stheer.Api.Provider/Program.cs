@@ -1,7 +1,10 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Versioning;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.OpenApi.Models;
+using Stheer.DLL.Domain;
+using Stheer.DLL.Domain.DBContext;
 using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -34,6 +37,11 @@ builder.Services.AddApiVersioning(opt =>
         new HeaderApiVersionReader("x-api-version"),
         new MediaTypeApiVersionReader("x-api-version"));
 });
+
+
+
+//Adding dependencies
+DLLDependency.AllDependencies(builder.Services, builder.Configuration);
 
 var app = builder.Build();
 
