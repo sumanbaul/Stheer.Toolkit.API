@@ -5,7 +5,11 @@ VisualStudioVersion = 17.3.32819.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Provider", "Provider", "{C13DB87E-4599-42B5-9BEB-C7DC0B658076}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stheer.Api.Provider", "src\Provider\Stheer.Api.Provider\Stheer.Api.Provider.csproj", "{BE381D85-8BAA-4E64-99E9-E63E4DC29B01}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stheer.Api.Provider", "src\Provider\Stheer.Api.Provider\Stheer.Api.Provider.csproj", "{BE381D85-8BAA-4E64-99E9-E63E4DC29B01}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{985D1238-F475-4947-8E62-76AFD08FA36D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stheer.DLL.Domain", "src\Domain\Stheer.DLL.Domain\Stheer.DLL.Domain.csproj", "{4E59B01C-3232-442D-ACBC-FFBB9ABC21DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +21,17 @@ Global
 		{BE381D85-8BAA-4E64-99E9-E63E4DC29B01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE381D85-8BAA-4E64-99E9-E63E4DC29B01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE381D85-8BAA-4E64-99E9-E63E4DC29B01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E59B01C-3232-442D-ACBC-FFBB9ABC21DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E59B01C-3232-442D-ACBC-FFBB9ABC21DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E59B01C-3232-442D-ACBC-FFBB9ABC21DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E59B01C-3232-442D-ACBC-FFBB9ABC21DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{BE381D85-8BAA-4E64-99E9-E63E4DC29B01} = {C13DB87E-4599-42B5-9BEB-C7DC0B658076}
+		{4E59B01C-3232-442D-ACBC-FFBB9ABC21DB} = {985D1238-F475-4947-8E62-76AFD08FA36D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {85CBE197-4091-44FC-87AF-6406F08552BA}
