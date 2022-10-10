@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Stheer.DLL.Domain.DBContext;
+using Stheer.DLL.Domain.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,15 @@ namespace Stheer.DLL.Domain
         public static void AllDependencies(IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+
+            //repository dependencies
+            services.AddTransient<IHabitsRepository, HabitsRepository>();
         }
+
+
+
+
+
 
     }
 }

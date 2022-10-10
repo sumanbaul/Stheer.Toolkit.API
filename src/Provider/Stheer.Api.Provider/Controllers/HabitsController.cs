@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Stheer.Api.Provider.Models;
+using Stheer.DLL.Domain.Repositories;
 
 namespace Stheer.Api.Provider.Controllers
 {
@@ -9,6 +10,13 @@ namespace Stheer.Api.Provider.Controllers
     [Route(template:"[controller]")]
     public class HabitsController : Controller
     {
+        private readonly IHabitsRepository _habitsRepository;
+
+        public HabitsController(IHabitsRepository habitsRepository)
+        {
+            _habitsRepository = habitsRepository;
+        }
+
         [HttpGet]
         public IActionResult GetAllHabits()
         {
@@ -22,9 +30,9 @@ namespace Stheer.Api.Provider.Controllers
         }
 
         [HttpPost]
-        public IActionResult InsertHabit(Habit habit)
+        public async Task<IActionResult> InsertHabit(Habit habit)
         {
-            return Ok(HabitsStatic.InsertHabits(habit));
+            return Ok(await _habitsRepository.Insert(habit));
         }
 
         [HttpPut(template:"{code}")]

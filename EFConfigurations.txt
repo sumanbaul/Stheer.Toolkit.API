@@ -1,0 +1,10 @@
+First navigation to 'src' folder and execute the below commands for migration: 
+
+--InitialMigration migrations
+dotnet ef  database update InitialMigration --project "Domain\Stheer.DLL.Domain" --startup-project "Provider\Stheer.Api.Provider"
+
+
+--after alter in models, add migrations
+dotnet ef migrations add AlterModelChanges --project "Domain\Stheer.DLL.Domain" --startup-project "Provider\Stheer.Api.Provider"
+dotnet ef  database update AlterModelChanges --project "Domain\Stheer.DLL.Domain" --startup-project "Provider\Stheer.Api.Provider"
+

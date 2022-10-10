@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Stheer.DLL.Domain.DBContext;
 
@@ -11,9 +12,10 @@ using Stheer.DLL.Domain.DBContext;
 namespace Stheer.DLL.Domain.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221010075840_AlterHabitModel_IdRequiredOff")]
+    partial class AlterHabitModel_IdRequiredOff
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -63,37 +65,6 @@ namespace Stheer.DLL.Domain.Migrations
                     b.HasKey("HabitsId");
 
                     b.ToTable("habitDetails");
-                });
-
-            modelBuilder.Entity("Stheer.DLL.Domain.Models.HabitType", b =>
-                {
-                    b.Property<int>("HabitTypeId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("HabitTypeId"), 1L, 1);
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("HabitsId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("IsDeleted")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("ModifiedBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("ModifiedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("HabitTypeId");
-
-                    b.ToTable("habitTypes");
                 });
 #pragma warning restore 612, 618
         }
