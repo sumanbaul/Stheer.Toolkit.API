@@ -15,6 +15,10 @@ namespace Stheer.DLL.Domain.Models
         [Key]
         [Column(TypeName = "int")]
         public int HabitTypeId { get; set; }
+        [Required]
+        [Column(TypeName = "varchar(150)")]
+        public string HabitTypeName { get; set; }
+        //[Required]
         public int UserId { get; set; }
         public int? HabitsId { get; set; }
         public DateTime? CreatedDate { get; set; }

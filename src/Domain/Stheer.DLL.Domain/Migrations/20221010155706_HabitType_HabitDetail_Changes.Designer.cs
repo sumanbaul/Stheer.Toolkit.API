@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Stheer.DLL.Domain.DBContext;
 
@@ -11,9 +12,10 @@ using Stheer.DLL.Domain.DBContext;
 namespace Stheer.DLL.Domain.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221010155706_HabitType_HabitDetail_Changes")]
+    partial class HabitType_HabitDetail_Changes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -42,8 +44,8 @@ namespace Stheer.DLL.Domain.Migrations
                     b.Property<string>("HabitName")
                         .HasColumnType("varchar(150)");
 
-                    b.Property<int?>("HabitTypeId")
-                        .HasColumnType("int");
+                    b.Property<string>("HabitTypeId")
+                        .HasColumnType("varchar(150)");
 
                     b.Property<int?>("IsCompleted")
                         .HasColumnType("int");
@@ -78,7 +80,7 @@ namespace Stheer.DLL.Domain.Migrations
 
                     b.Property<string>("HabitTypeName")
                         .IsRequired()
-                        .HasColumnType("varchar(150)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("HabitsId")
                         .HasColumnType("int");

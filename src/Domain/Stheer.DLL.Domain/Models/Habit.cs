@@ -14,8 +14,8 @@ namespace Stheer.Api.Provider.Models
 
         [Column(TypeName = "varchar(150)")]
         public string? HabitName { get; set; }
-        [Column(TypeName = "varchar(150)")]
-        public string? HabitType { get; set; }
+        [Column(TypeName = "int")]
+        public int? HabitTypeId { get; set; }
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
         public int? IsCompleted { get; set; }
